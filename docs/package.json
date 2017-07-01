@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "author": "Moin Uddin (https://moin.im)",
+  "devDependencies": {
+    "semantic-ui": "^2.2.10"
+  }
+}
