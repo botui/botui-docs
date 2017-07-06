@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/style.css?t=615badd5">
+    <link rel="stylesheet" href="style.css?t=6daf1d3b">
+    <script src="assets/script.js?t=42463e55"></script>
+    <script src="https://use.fontawesome.com/ea731dcb6f.js"></script>
+    <title>Installation - BotUI</title>
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body class="-menu-visible">
+    <div class="doc-layout">
+      <div class="toggle menu-toggle js-menu-toggle"></div>
+      <div class="menu toc-menu">
+        <li class="menu-item -level-0 -parent">
+          <ul class="submenu">
+            <li class="menu-item -level-1"><a class="link title  link-index" href="index.html">BotUI</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title -active link-install" href="install.html">Installation</a>
+              <ul class="headings heading-list">
+                <li class="heading-item -depth-2"><a class="hlink link-installation" href="#installation">Installation</a>
+                  <ul class="heading-list -depth-2">
+                    <li class="heading-item -depth-3"><a class="hlink link-using-cdn" href="#using-cdn">Using CDN</a>
+                    </li>
+                    <li class="heading-item -depth-3"><a class="hlink link-local-download" href="#local-download">Local Download</a>
+                    </li>
+                    <li class="heading-item -depth-3"><a class="hlink link-bot-ui-tag" href="#bot-ui-tag">bot-ui Tag</a>
+                    </li>
+                    <li class="heading-item -depth-3"><a class="hlink link-initiate-botui" href="#initiate-botui">Initiate BotUI</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-concepts" href="concepts.html">Concepts</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-guide" href="guide.html">Guide</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-theme" href="theme.html">Theme</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-reference" href="reference.html">Reference</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-contribute" href="contribute.html">Contribute</a>
+            </li>
+          </ul>
+        </li>
+      </div>
+      <div class="body page-install">
+        <div class="header-nav">
+          <div class="right">
+          </div>
+        </div>
+        <div class="markdown-body"><h2 id="installation">Installation</h2>
+<h3 id="using-cdn">Using CDN</h3>
+<p>A BotUI page requires following files. You can use these links directly in your page.</p>
+<pre><code class="lang-javascript"><span class="pl-c">// required for basic layout</span>
+https:<span class="pl-c">//cdn.jsdelivr.net/npm/botui/build/botui.min.css</span>
+
+<span class="pl-c">// default theme - you can create your own theme</span>
+https:<span class="pl-c">//cdn.jsdelivr.net/npm/botui/build/botui-theme-default.css</span>
+
+<span class="pl-c">// Vue - BotUI requires Vue to be present in page</span>
+https:<span class="pl-c">//cdn.jsdelivr.net/vue/latest/vue.min.js</span>
+
+<span class="pl-c">// BotUI - main file</span>
+https:<span class="pl-c">//cdn.jsdelivr.net/npm/botui/build/botui.min.js</span>
+
+</code></pre>
+<h3 id="local-download">Local Download</h3>
+<p>You can download the latest files from <a href="https://github.com/moinism/botui/">Github repo</a> and link them to your project.</p>
+<p>All the required files are in <code>build</code> folder. But you still have to add <a href="https://cdn.jsdelivr.net/vue/latest/vue.min.js">Vue</a>, either via CDN or local script.</p>
+<p>A bare-bone page with all the required files should look like this:</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="pl-s">&quot;utf-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>BotUI<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="pl-s">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="pl-s">&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="pl-s">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="pl-s">&quot;./botui/build/botui.min.css&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="pl-s">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="pl-s">&quot;./botui/build/botui-theme-default.css&quot;</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+
+    .....
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="pl-s">&quot;https://cdn.jsdelivr.net/vue/latest/vue.min.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="pl-s">&quot;./botui/build/botui.min.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<h3 id="bot-ui-tag">bot-ui Tag</h3>
+<p><code>&lt;bot-ui&gt;</code> tag is where the magic begins.</p>
+<p>After you&apos;ve linked all the required files in the page. Now you can proceed to add <code>&lt;bot-ui&gt;</code> tag where you want the bot to appear in your page.</p>
+<p>For example:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="pl-s">&quot;my-botui-app&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">bot-ui</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">bot-ui</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>Now BotUI will populate <code>#my-botui-app</code> element with all the required DOM. i.e: You&apos;ll see your bot here.</p>
+<h3 id="initiate-botui">Initiate BotUI</h3>
+<p>After you&apos;ve added the <code>&lt;bot-ui&gt;</code> to your markup, its time for the last step of installation.</p>
+<pre><code class="lang-javascript"><span class="pl-k">var</span> botui = <span class="pl-k">new</span> BotUI(<span class="pl-s">&apos;my-botui-app&apos;</span>);
+</code></pre>
+<p><code>BotUI</code> should a global variable in the page if you&apos;ve included all the required files correctly.</p>
+<p>Pass the <code>id</code> of the element which has the <code>&lt;bot-ui&gt;</code> tag.</p>
+<p>That&apos;s it. now you can start adding messages and showing actions.</p>
+
+        </div>
+        <div class="footer-nav">
+          <div class="left"><a href="index.html"><span class="title">BotUI</span></a></div>
+          <div class="right"><a href="concepts.html"><span class="label">Next: </span><span class="title">Concepts</span></a></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

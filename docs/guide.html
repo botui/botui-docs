@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/style.css?t=615badd5">
+    <link rel="stylesheet" href="style.css?t=6daf1d3b">
+    <script src="assets/script.js?t=42463e55"></script>
+    <script src="https://use.fontawesome.com/ea731dcb6f.js"></script>
+    <title>Guide - BotUI</title>
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body class="-menu-visible">
+    <div class="doc-layout">
+      <div class="toggle menu-toggle js-menu-toggle"></div>
+      <div class="menu toc-menu">
+        <li class="menu-item -level-0 -parent">
+          <ul class="submenu">
+            <li class="menu-item -level-1"><a class="link title  link-index" href="index.html">BotUI</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-install" href="install.html">Installation</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-concepts" href="concepts.html">Concepts</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title -active link-guide" href="guide.html">Guide</a>
+              <ul class="headings heading-list">
+                <li class="heading-item -depth-3"><a class="hlink link-hello-world" href="#hello-world">Hello World</a>
+                </li>
+                <li class="heading-item -depth-3"><a class="hlink link-messages" href="#messages">Messages</a>
+                </li>
+                <li class="heading-item -depth-3"><a class="hlink link-actions" href="#actions">Actions</a>
+                </li>
+                <li class="heading-item -depth-3"><a class="hlink link-botui-markup" href="#botui-markup">BotUI Markup</a>
+                </li>
+                <li class="heading-item -depth-3"><a class="hlink link-icons" href="#icons">Icons</a>
+                </li>
+                <li class="heading-item -depth-3"><a class="hlink link-using-cssclass" href="#using-cssclass">Using `cssClass`</a>
+                </li>
+                <li class="heading-item -depth-3"><a class="hlink link-message-index" href="#message-index">Message `index`</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-theme" href="theme.html">Theme</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-reference" href="reference.html">Reference</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-contribute" href="contribute.html">Contribute</a>
+            </li>
+          </ul>
+        </li>
+      </div>
+      <div class="body page-guide">
+        <div class="header-nav">
+          <div class="right">
+          </div>
+        </div>
+        <div class="markdown-body"><h1 id="guide">Guide</h1>
+<h3 id="hello-world">Hello World</h3>
+<p>Here&apos;s is basic example of BotUI to show a &apos;Hello World&apos; message.</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="pl-s">&quot;utf-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>BotUI - Hello World<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="pl-s">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="pl-s">&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="pl-s">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="pl-s">&quot;https://cdn.jsdelivr.net/npm/botui/build/botui.min.css&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="pl-s">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="pl-s">&quot;https://cdn.jsdelivr.net/npm/botui/build/botui-theme-default.css&quot;</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="pl-s">&quot;botui-app-container&quot;</span> <span class="hljs-attr">id</span>=<span class="pl-s">&quot;hello-world&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">bot-ui</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">bot-ui</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="pl-s">&quot;https://cdn.jsdelivr.net/vue/latest/vue.min.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="pl-s">&quot;https://cdn.jsdelivr.net/npm/botui/build/botui.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+      <span class="pl-k">var</span> botui = <span class="pl-k">new</span> BotUI(<span class="pl-s">&apos;hello-world&apos;</span>);
+
+      botui.message.add({
+        content: <span class="pl-s">&apos;Hello World from bot!&apos;</span>
+      }).then(<span class="hljs-function"><span class="pl-k">function</span> <span class="hljs-params">()</span> </span>{ <span class="pl-c">// wait till previous message has been shown.</span>
+
+        botui.message.add({
+          human: <span class="pl-c1">true</span>,
+          content: <span class="pl-s">&apos;Hello World from human!&apos;</span>
+        });
+      });
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<h3 id="messages">Messages</h3>
+<p>You can not only send text in messages but also links, images, and icons.</p>
+<h3 id="actions">Actions</h3>
+<p>Showing buttons, getting values.</p>
+<pre><code class="lang-javascript">botui.action.button({
+  <span class="hljs-attr">buttons</span>: [
+    { <span class="pl-c">// show only one button</span>
+      text: <span class="pl-s">&apos;One&apos;</span>,
+      <span class="hljs-attr">value</span>: <span class="pl-s">&apos;one&apos;</span>
+    }
+  ]
+}).then(<span class="hljs-function"><span class="pl-k">function</span> (<span class="hljs-params">res</span>) </span>{ <span class="pl-c">// will be called when a button is clicked.</span>
+  <span class="pl-c1">console</span>.log(res.value); <span class="pl-c">// will print &quot;one&quot; from &apos;value&apos;</span>
+});
+</code></pre>
+<h3 id="botui-markup">BotUI Markup</h3>
+<p>BotUI supports a subset of markdown language in <code>content</code> on <code>message</code> object.</p>
+<p>Currently supported set is:</p>
+<ul>
+<li>URLs - Use <code>[name](url)</code> syntax to show links.</li>
+<li>Images - Use <code>![aleternate text](src)</code> to show Images.</li>
+<li>Icons (not a feature of markdown) - Use <code>!(icon name)</code> to show icons.</li>
+</ul>
+<p><strong>URL</strong> Example:</p>
+<pre><code class="lang-javascript">botui.message.add({
+  <span class="hljs-attr">content</span>: <span class="pl-s">&apos;Go ahead, try [our product](https://example.com)&apos;</span>
+});
+</code></pre>
+<p>This will show up something like:</p>
+<blockquote>
+<p>Go ahead, try <a href="https://example.com">our product</a></p>
+</blockquote>
+<p>BotUI opens links in messages in the same tab, if you want to open the link in new tab then just add <code>^</code> at the end of URL syntax. e.g.:</p>
+<pre><code class="lang-javascript">botui.message.add({
+  <span class="hljs-attr">content</span>: <span class="pl-s">&apos;Go ahead, try [our product](https://example.com)^&apos;</span>
+});
+</code></pre>
+<p><strong>Image</strong> Example:</p>
+<pre><code class="lang-javascript">botui.message.add({
+  <span class="hljs-attr">content</span>: <span class="pl-s">&apos;Here is an image ![product image](https://example.com/image.png)&apos;</span>
+});
+</code></pre>
+<p>Here our <code>product image</code> will show as <code>alt</code> attribute of <code>img</code> element.</p>
+<p>Preview:</p>
+<blockquote>
+<p>Here is an image <img src="https://example.com/image.png" alt="product image"></p>
+</blockquote>
+<p>A linked image:</p>
+<pre><code class="lang-javascript">botui.message.add({
+  <span class="hljs-attr">content</span>: <span class="pl-s">&apos;Here is an image [![product image](https://example.com/image.png)](https://example.com/product.html)&apos;</span>
+});
+</code></pre>
+<p>Preview:</p>
+<blockquote>
+<p>Here is an image <a href="https://example.com/product.html"><img src="https://example.com/image.png" alt="product image"></a></p>
+</blockquote>
+<p><strong>Icon</strong> Example:</p>
+<p>If you are familiar with FontAwesome then you that in order to show a checkmark icon, we would use something like <code>&lt;i class=&quot;fa fa-check&quot;&gt;&lt;i&gt;</code></p>
+<p>Similarly, to show that icon in BotUI we&apos;d do something like:</p>
+<pre><code class="lang-javascript">botui.message.add({
+  <span class="hljs-attr">content</span>: <span class="pl-s">&apos;!(check) All Done!&apos;</span>
+});
+</code></pre>
+<p>Preview:</p>
+<blockquote>
+<p><i class="fa fa-check"><i> All Done!</i></i></p>
+</blockquote>
+<h3 id="icons">Icons</h3>
+<p>BotUI uses FontAwesome to show icons. It means you can use all the FontAwesome icons in your messages and buttons.</p>
+<p>Just use the icon name in <code>icon</code> property of <code>button</code> or <code>action</code> object.</p>
+<p>Just like the example above, to show the checkmark icon in a button, we&apos;d do something like:</p>
+<pre><code class="lang-javascript">botui.action.button({
+  <span class="hljs-attr">buttons</span>: [
+    {
+      <span class="hljs-attr">icon</span>: <span class="pl-s">&apos;check&apos;</span>,
+      <span class="hljs-attr">text</span>: <span class="pl-s">&apos;Continue&apos;</span>,
+      <span class="hljs-attr">value</span>: <span class="pl-s">&apos;continue&apos;</span>
+    }
+  ]
+})
+</code></pre>
+<h3 id="using-cssclass">Using <code>cssClass</code></h3>
+<p>Because you don&apos;t have control over HTML of the UI you cannot add or remove elements. But BotUI has the option where you can apply CSS classes to certain elements and then apply styles to them as you want.</p>
+<p><code>cssClass</code> options is supported on message, action, input and button elements.</p>
+<p>For example, to apply a custom class to our messages, you can do something like:</p>
+<pre><code class="lang-javascript">botui.message.add({
+  <span class="hljs-attr">cssClass</span>: <span class="pl-s">&apos;custom-class&apos;</span>,
+  <span class="hljs-attr">content</span>: <span class="pl-s">&apos;!(check) All Done!&apos;</span>
+});
+</code></pre>
+<p>and then you can use <code>custom-class</code> in your stylesheet to apply any styles you want to messages.</p>
+<p>You can add a single class using <code>cssClass</code> or an array of classes like: <code>cssClass: [&apos;one&apos;, &apos;two&apos;]</code></p>
+<h3 id="message-index">Message <code>index</code></h3>
+<p>When you add a message to UI, an <code>index</code> of that message is returned from internal messages array.
+You can think of this <code>index</code> as the message id but it can change so its not to be assumed unique.</p>
+<p>You can then use this <code>index</code> to change or remove a message by calling <a href="reference.html#botui.message.update"><code>message.update</code></a> or <a href="reference.html#botui.message.remove"><code>message.remove</code></a> methods on BotUI instance.</p>
+<p>To update a message, we can do something like:</p>
+<pre><code class="lang-javascript">botui.message.add({
+  <span class="hljs-attr">content</span>: <span class="pl-s">&apos;Tracking your package ...&apos;</span>
+}).then(<span class="hljs-function"><span class="pl-k">function</span> (<span class="hljs-params">index</span>) </span>{ <span class="pl-c">// index of added message</span>
+ <span class="pl-c">// do some stuff here from server, etc.</span>
+
+ <span class="pl-c">// let&apos;s update the previous message</span>
+
+ <span class="pl-c">// call the `update` method and pass the `index` we got from Promise.</span>
+ botui.message.update(index, {
+   <span class="hljs-attr">content</span>: <span class="pl-s">&apos;Here is the location..&apos;</span>
+ });
+
+});
+</code></pre>
+
+        </div>
+        <div class="footer-nav">
+          <div class="left"><a href="concepts.html"><span class="title">Concepts</span></a></div>
+          <div class="right"><a href="theme.html"><span class="label">Next: </span><span class="title">Theme</span></a></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

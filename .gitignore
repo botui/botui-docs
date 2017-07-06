@@ -1,6 +1,2 @@
 .DS_Store
 node_modules
-semantic/src
-semantic/tasks
-semantic/gulpfile.js
-semantic/dist/components

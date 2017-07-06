@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/style.css?t=615badd5">
+    <link rel="stylesheet" href="style.css?t=6daf1d3b">
+    <script src="assets/script.js?t=42463e55"></script>
+    <script src="https://use.fontawesome.com/ea731dcb6f.js"></script>
+    <title>BotUI</title>
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body class="-menu-visible">
+    <div class="doc-layout">
+      <div class="toggle menu-toggle js-menu-toggle"></div>
+      <div class="menu toc-menu">
+        <li class="menu-item -level-0 -parent">
+          <ul class="submenu">
+            <li class="menu-item -level-1"><a class="link title -active link-index" href="index.html">BotUI</a>
+              <ul class="headings heading-list">
+                <li class="heading-item -depth-3"><a class="hlink link-overview" href="#overview">Overview</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-install" href="install.html">Installation</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-concepts" href="concepts.html">Concepts</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-guide" href="guide.html">Guide</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-theme" href="theme.html">Theme</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-reference" href="reference.html">Reference</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-contribute" href="contribute.html">Contribute</a>
+            </li>
+          </ul>
+        </li>
+      </div>
+      <div class="body page-index">
+        <div class="header-nav">
+          <div class="right">
+          </div>
+        </div>
+        <div class="markdown-body"><h1 id="botui">BotUI</h1>
+<blockquote>
+<p>A JavaScript framework to build UI for your bot.</p>
+</blockquote>
+<p>BotUI makes it super easy to create conversational/bot interfaces. It has an intuitive JavaScript API to add messages and show actions that a user can perform.</p>
+<p>It also gives you total control over how everything looks. You can also create your own <a href="theme.html">themes</a>.</p>
+<h3 id="overview">Overview</h3>
+<p>Here&apos;s a quick preview of how it works.</p>
+<h4 id="the-html">The HTML</h4>
+<p>Add the <code>&lt;bot-ui&gt;</code> where you want the bot to appear.</p>
+<pre><code class="lang-html">...
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="pl-s">&quot;my-botui-app&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">bot-ui</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">botui</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+...
+</code></pre>
+<h4 id="javascript">JavaScript</h4>
+<p>Pass the parent element&apos;s <code>id</code> to <code>BotUI</code> constructor.</p>
+<pre><code class="lang-javascript"><span class="pl-k">var</span> botui = <span class="pl-k">new</span> BotUI(<span class="pl-s">&apos;my-botui-app&apos;</span>);
+</code></pre>
+<p>Call the <code>message.add</code> method to show a message.</p>
+<pre><code class="lang-javascript">botui.message.add({
+  <span class="hljs-attr">content</span>: <span class="pl-s">&apos;Hello There!&apos;</span>
+}).then(<span class="hljs-function"><span class="pl-k">function</span> (<span class="hljs-params"></span>) </span>{ <span class="pl-c">// wait till its shown</span>
+  botui.message.add({ <span class="pl-c">// show next message</span>
+    content: <span class="pl-s">&apos;How are you?&apos;</span>
+  });
+});
+</code></pre>
+<p>Follow the docs for details about how everything works.</p>
+
+        </div>
+        <div class="footer-nav">
+          <div class="right"><a href="install.html"><span class="label">Next: </span><span class="title">Installation</span></a></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

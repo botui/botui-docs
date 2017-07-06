@@ -1,0 +1,11 @@
+{
+  "dist": "docs",
+  "docs": "md-docs",
+
+  "css": [
+    "style.css"
+  ],
+  "scripts": [
+    "https://use.fontawesome.com/ea731dcb6f.js"
+  ]
+}

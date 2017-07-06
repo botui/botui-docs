@@ -3,7 +3,6 @@
   "author": "Moin Uddin (https://moin.im)",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-serve": "^1.4.0",
-    "semantic-ui": "^2.2.10"
+    "gulp-serve": "^1.4.0"
   }
 }
