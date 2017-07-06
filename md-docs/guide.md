@@ -48,11 +48,38 @@ You can not only send text in messages but also links, images, and icons.
 
 ### Actions
 
-Showing buttons, getting values.
+Show a field to get a **text** input:
+
+```javascript
+botui.action.text({
+  action: {
+    placeholder: 'Enter your text here'
+  }
+}).then(function (res) { // will be called when it is submitted.
+  console.log(res.value); // will print whatever was typed in the field.
+});
+```
+
+We can make use of `sub_type` to ask user for different type of data.
+
+For example, let's ask for an email.
+
+```javascript
+botui.action.text({
+  action: {
+    sub_type: 'email',
+    placeholder: 'Enter your text here'
+  }
+});
+```
+
+What this does under the hood is to set the `type` attribute on `input` element. In this case, the attribute would look something like `<input type="email" />`.
+
+This means you can use any valid <a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types">`input type`</a> here. 😲
 
 ```javascript
 botui.action.button({
-  buttons: [
+  action: [
     { // show only one button
       text: 'One',
       value: 'one'
@@ -146,7 +173,7 @@ Just like the example above, to show the checkmark icon in a button, we'd do som
 
 ```javascript
 botui.action.button({
-  buttons: [
+  action: [
     {
       icon: 'check',
       text: 'Continue',

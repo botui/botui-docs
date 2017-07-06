@@ -8,6 +8,11 @@
     <script src="https://use.fontawesome.com/ea731dcb6f.js"></script>
     <title>Reference - BotUI</title>
     <meta name="viewport" content="width=device-width">
+    <script>if (false || window.location.hostname.indexOf("docs.botui.org") === window.location.hostname.length - 14) {
+        (function(d,o,c,p,r,e,s){d['GoogleAnalyticsObject']=r;d[r]=d[r]||function(){(d[r].q=d[r].q||[]).push(arguments)},d[r].l=1*new Date();e=o.createElement(c),s=o.getElementsByTagName(c)[0];e.async=1;e.src=p;s.parentNode.insertBefore(e,s)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create',"UA-102158265-1",'auto')
+      }
+    </script>
   </head>
   <body class="-menu-visible">
     <div class="doc-layout">
@@ -39,6 +44,8 @@
                     </li>
                     <li class="heading-item -depth-3"><a class="hlink link-action-object" href="#action-object">action object</a>
                     </li>
+                    <li class="heading-item -depth-3"><a class="hlink link-text-object" href="#text-object">text object</a>
+                    </li>
                     <li class="heading-item -depth-3"><a class="hlink link-button-object" href="#button-object">button object</a>
                     </li>
                     <li class="heading-item -depth-3"><a class="hlink link-result-object" href="#result-object">result object</a>
@@ -56,7 +63,8 @@
       </div>
       <div class="body page-reference">
         <div class="header-nav">
-          <div class="right">
+          <div class="right"><a class="iconlink" href="https://github.com/moinism/botui" data-title="moinism/botui">
+              <!-- span.title Open in GitHub--><span class="icon -github"></span></a>
           </div>
         </div>
         <div class="markdown-body"><h1 id="api-reference">API Reference</h1>
@@ -91,6 +99,7 @@
 </li>
 <li><a href="#message-object"><code>message</code></a> object</li>
 <li><a href="#action-object"><code>action</code></a> object</li>
+<li><a href="#text-object"><code>text</code></a> object</li>
 <li><a href="#button-object"><code>button</code></a> object</li>
 <li><a href="#result-object"><code>result</code></a> object</li>
 <li><a href="#promise"><code>Promise</code></a></li>
@@ -220,15 +229,7 @@
 {
   <span class="hljs-attr">type</span>: <span class="pl-s">&apos;text&apos;</span>, <span class="pl-c">// either &apos;text&apos; or &apos;button&apos;,</span>
 
-  size: <span class="hljs-number">30</span>, <span class="pl-c">// size of the input to show. Relies on HTML size attribute for input elements.</span>
-
-  sub_type: <span class="pl-s">&apos;&apos;</span>, <span class="pl-c">// Could be any of the valid types for HTML input elements. e.g.: number, tel, time, date, email, etc.</span>
-
-  value: <span class="pl-s">&apos;&apos;</span>, <span class="pl-c">// pre-populates the text field. Only for &apos;text&apos; type.</span>
-
-  placeholder: <span class="pl-s">&apos;Write here ..&apos;</span>, <span class="pl-c">// Sets the placeholder text for the input element.</span>
-
-  buttons: [], <span class="pl-c">// required if type is &apos;button&apos;. ignored otherwise. an array of button objects. at least one object is required.</span>
+  action: [], <span class="pl-c">// array of &apos;button&apos; objects if type is &apos;button&apos;. object of &apos;text&apos; otherwise.</span>
 
   cssClass: <span class="pl-s">&apos;&apos;</span>, <span class="pl-c">// a string or array of custom CSS classes you want to be added.</span>
 
@@ -237,8 +238,20 @@
   addMessage: <span class="pl-c1">true</span> <span class="pl-c">// text from action is added as a message in UI from human side.</span>
 }
 </code></pre>
+<h3 id="text-object">text object</h3>
+<p>Required as <code>action</code> in <code>action</code> object.</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-attr">size</span>: <span class="hljs-number">30</span>, <span class="pl-c">// size of the input to show. Relies on HTML size attribute for input elements.</span>
+
+  sub_type: <span class="pl-s">&apos;&apos;</span>, <span class="pl-c">// Could be any of the valid types for HTML input elements. e.g.: number, tel, time, date, email, etc.</span>
+
+  value: <span class="pl-s">&apos;&apos;</span>, <span class="pl-c">// pre-populates the text field. Only for &apos;text&apos; type.</span>
+
+  placeholder: <span class="pl-s">&apos;Write here ..&apos;</span>, <span class="pl-c">// Sets the placeholder text for the input element.</span>
+}
+</code></pre>
 <h3 id="button-object">button object</h3>
-<p>Required in <code>buttons</code> array in <code>action</code> object.</p>
+<p>Required as <code>action</code> array in <code>action</code> object.</p>
 <pre><code class="lang-javascript">{
   <span class="hljs-attr">icon</span>: <span class="pl-s">&apos;&apos;</span>, <span class="pl-c">// icon to show in button.</span>
   text: <span class="pl-s">&apos;&apos;</span>, <span class="pl-c">// Text to show in the button. be creative!</span>

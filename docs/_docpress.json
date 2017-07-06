@@ -170,6 +170,11 @@
                 "id": "action-object"
               },
               {
+                "title": "text object",
+                "depth": 3,
+                "id": "text-object"
+              },
+              {
                 "title": "button object",
                 "depth": 3,
                 "id": "button-object"
@@ -376,6 +381,11 @@
               "title": "action object",
               "depth": 3,
               "id": "action-object"
+            },
+            {
+              "title": "text object",
+              "depth": 3,
+              "id": "text-object"
             },
             {
               "title": "button object",

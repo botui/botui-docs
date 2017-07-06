@@ -20,6 +20,7 @@
       - [`button`](#botui.action.button)
 - [`message`](#message-object) object
 - [`action`](#action-object) object
+- [`text`](#text-object) object
 - [`button`](#button-object) object
 - [`result`](#result-object) object
 - [`Promise`](#promise)
@@ -165,15 +166,7 @@ Can be passed to `botui.action.show`, `botui.action.text` and `botui.action.butt
 {
   type: 'text', // either 'text' or 'button',
 
-  size: 30, // size of the input to show. Relies on HTML size attribute for input elements.
-
-  sub_type: '', // Could be any of the valid types for HTML input elements. e.g.: number, tel, time, date, email, etc.
-
-  value: '', // pre-populates the text field. Only for 'text' type.
-
-  placeholder: 'Write here ..', // Sets the placeholder text for the input element.
-
-  buttons: [], // required if type is 'button'. ignored otherwise. an array of button objects. at least one object is required.
+  action: [], // array of 'button' objects if type is 'button'. object of 'text' otherwise.
 
   cssClass: '', // a string or array of custom CSS classes you want to be added.
 
@@ -183,9 +176,25 @@ Can be passed to `botui.action.show`, `botui.action.text` and `botui.action.butt
 }
 ```
 
+### text object
+
+Required as `action` in `action` object.
+
+```javascript
+{
+  size: 30, // size of the input to show. Relies on HTML size attribute for input elements.
+
+  sub_type: '', // Could be any of the valid types for HTML input elements. e.g.: number, tel, time, date, email, etc.
+
+  value: '', // pre-populates the text field. Only for 'text' type.
+
+  placeholder: 'Write here ..', // Sets the placeholder text for the input element.
+}
+```
+
 ### button object
 
-Required in `buttons` array in `action` object.
+Required as `action` array in `action` object.
 
 ```javascript
 {

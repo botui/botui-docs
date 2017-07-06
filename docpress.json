@@ -5,6 +5,11 @@
   "css": [
     "style.css"
   ],
+  "github": "moinism/botui",
+  "googleAnalytics": {
+    "id": "UA-102158265-1",
+    "domain": "docs.botui.org"
+  },
   "scripts": [
     "https://use.fontawesome.com/ea731dcb6f.js"
   ]

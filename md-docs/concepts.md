@@ -48,7 +48,9 @@ myBot.message.add({ // show a message
   content: 'Whats your name?'
 }).then(function () { // wait till its shown
   myBot.action.text({ // show 'text' action
-    placeholder: 'Your name'
+    action: {
+      placeholder: 'Your name'
+    }
   });
 })
 ```
@@ -68,7 +70,9 @@ myBot.message.add({ // show a message
   content: 'Whats your name?'
 }).then(function () { // wait till its shown
   myBot.action.text({ // show 'text' action
-    placeholder: 'Your name'
+    action: {
+      placeholder: 'Your name'
+    }
   });
 })
 ```
@@ -84,7 +88,9 @@ myBot.message.add({ // show a message
   content: 'Whats your name?'
 }).then(function () { // wait till its shown
   return myBot.action.text({ // show 'text' action
-    placeholder: 'Your name'
+    action: {
+      placeholder: 'Your name'
+    }
   });
 }).then(function (res) { // get the result
   myBot.message.add({

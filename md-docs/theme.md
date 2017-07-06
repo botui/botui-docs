@@ -6,12 +6,12 @@ Its also quite easy to create a custom them for your BotUI.
 
 ## Create your own
 
-1. Clone the git repo.
+1. Clone the [git repo](https://github.com/moinism/botui).
 2. `cd` to cloned folder.
 3. Do an `npm install`
 4. Run `gulp watch`
 5. Go to `src/styles/themes` folder
-6. Make a copy of `default.scss` file and name it anything like `custom.scss`
+6. Make a copy of `default.scss` file and name it something like `custom.scss`
 7. Now you can change the styles in `custom.scss` and save the file.
 8. Go to `build` folder and you'll see a `botui-theme-custom.css` file there.
 9. Copy it into your project and link it instead of `botui-theme-default.css`.
@@ -62,44 +62,44 @@ You can follow this structure to customize BotUI as you want in your own theme.
 
 .botui-container {
 
-  .botui-messages-container {
-  }
+}
 
-  .botui-actions-container {
-  }
+.botui-messages-container {
+}
 
-  .botui-message {
+.botui-actions-container {
+}
 
-    .botui-message-content {
+.botui-message {
 
-      &.human {
+}
 
-      }
+.botui-message-content {
 
-      &.text {
-      }
-
-      &.embed {
-
-      }
-    }
-
-    .botui-message-content-link {
-    }
+  &.human {
 
   }
 
-  .botui-actions-text-input {
-
+  &.text {
   }
 
-  .botui-actions-text-submit {
+  &.embed {
 
   }
+}
 
-  .botui-actions-buttons-button {
+.botui-message-content-link {
+}
 
-  }
+.botui-actions-text-input {
+
+}
+
+.botui-actions-text-submit {
+
+}
+
+.botui-actions-buttons-button {
 
 }
 

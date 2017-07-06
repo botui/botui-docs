@@ -8,16 +8,16 @@ A BotUI page requires following files. You can use these links directly in your 
 
 ```javascript
 // required for basic layout
-https://cdn.jsdelivr.net/npm/botui/build/botui.min.css
+https://unpkg.com/botui/build/botui.min.css
 
 // default theme - you can create your own theme
-https://cdn.jsdelivr.net/npm/botui/build/botui-theme-default.css
+https://unpkg.com/botui/botui/build/botui-theme-default.css
 
 // Vue - BotUI requires Vue to be present in page
 https://cdn.jsdelivr.net/vue/latest/vue.min.js
 
 // BotUI - main file
-https://cdn.jsdelivr.net/npm/botui/build/botui.min.js
+https://unpkg.com/botui/botui/build/botui.min.js
 
 ```
 
