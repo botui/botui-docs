@@ -44,7 +44,28 @@ Here's is basic example of BotUI to show a 'Hello World' message.
 
 ### Messages
 
-You can not only send text in messages but also links, images, and icons.
+Messages are meant to show some content to users. Content could simply be some text, or something interactive embedded from a 3rd party.
+
+Text messages can also contain links, images and icons. See [BotUI Markup](#botui-markup) for details on that.
+
+To show a message call the `message.add` method on BotUI instance.
+
+```javascript
+botui.message.add({
+  content: 'Hello, this is a message.'
+});
+```
+
+Here's how to embed a YouTube video in a message:
+
+```javascript
+botui.message.add({
+  type: 'embed', // this is 'text' by default
+  content: 'https://www.youtube.com/embed/ZRBH5vHhm4c'
+});
+```
+
+What this would do is simply create an `iframe` element and set `content` as its `src` url. So anything that can be shown in an `iframe` can be embedded in a `BotUI` message.
 
 ### Actions
 
@@ -59,6 +80,23 @@ botui.action.text({
   console.log(res.value); // will print whatever was typed in the field.
 });
 ```
+
+Show a button.
+
+```javascript
+botui.action.button({
+  action: [
+    { // show only one button
+      text: 'One',
+      value: 'one'
+    }
+  ]
+}).then(function (res) { // will be called when a button is clicked.
+  console.log(res.value); // will print "one" from 'value'
+});
+```
+
+#### Using `sub_type`
 
 We can make use of `sub_type` to ask user for different type of data.
 
@@ -75,18 +113,44 @@ botui.action.text({
 
 What this does under the hood is to set the `type` attribute on `input` element. In this case, the attribute would look something like `<input type="email" />`.
 
-This means you can use any valid <a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types">`input type`</a> here. 😲
+This means you can use any valid <a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types" target="blank">`input type`</a> here. 😲
+
+
+#### Using `autoHide`
+
+Actions are hidden as soon as they are performed. If you'd like to keep showing actions then you can set 'autoHide' to `false`.
 
 ```javascript
 botui.action.button({
+  autoHide: false,
   action: [
-    { // show only one button
+    {
       text: 'One',
       value: 'one'
     }
   ]
 }).then(function (res) { // will be called when a button is clicked.
-  console.log(res.value); // will print "one" from 'value'
+  botui.action.hide(); // hide the button whenever you want.
+});
+```
+
+#### Using `addMessage`
+
+When an action is performed by user, a message from `human` side is added automatically with `action`'s data in it.
+
+If you'd like to show a message, upon action, yourself or don't anything at all then you can control this by setting `addMessage` to `false`.
+
+```javascript
+botui.action.text({
+  addMessage: false,
+  action: {
+    placeholder: 'Your name'
+  }
+}).then(function (res) { // will be called when a button is clicked.
+  botui.message.add({
+    human: true, // show it as right aligned to UI
+    content: 'My name is ' + res.value
+  });
 });
 ```
 

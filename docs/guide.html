@@ -94,7 +94,20 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
 <h3 id="messages">Messages</h3>
-<p>You can not only send text in messages but also links, images, and icons.</p>
+<p>Messages are meant to show some content to users. Content could simply be some text, or something interactive embedded from a 3rd party.</p>
+<p>Text messages can also contain links, images and icons. See <a href="#botui-markup">BotUI Markup</a> for details on that.</p>
+<p>To show a message call the <code>message.add</code> method on BotUI instance.</p>
+<pre><code class="lang-javascript">botui.message.add({
+  <span class="hljs-attr">content</span>: <span class="pl-s">&apos;Hello, this is a message.&apos;</span>
+});
+</code></pre>
+<p>Here&apos;s how to embed a YouTube video in a message:</p>
+<pre><code class="lang-javascript">botui.message.add({
+  <span class="hljs-attr">type</span>: <span class="pl-s">&apos;embed&apos;</span>, <span class="pl-c">// this is &apos;text&apos; by default</span>
+  content: <span class="pl-s">&apos;https://www.youtube.com/embed/ZRBH5vHhm4c&apos;</span>
+});
+</code></pre>
+<p>What this would do is simply create an <code>iframe</code> element and set <code>content</code> as its <code>src</code> url. So anything that can be shown in an <code>iframe</code> can be embedded in a <code>BotUI</code> message.</p>
 <h3 id="actions">Actions</h3>
 <p>Show a field to get a <strong>text</strong> input:</p>
 <pre><code class="lang-javascript">botui.action.text({
@@ -105,6 +118,19 @@
   <span class="pl-c1">console</span>.log(res.value); <span class="pl-c">// will print whatever was typed in the field.</span>
 });
 </code></pre>
+<p>Show a button.</p>
+<pre><code class="lang-javascript">botui.action.button({
+  <span class="hljs-attr">action</span>: [
+    { <span class="pl-c">// show only one button</span>
+      text: <span class="pl-s">&apos;One&apos;</span>,
+      <span class="hljs-attr">value</span>: <span class="pl-s">&apos;one&apos;</span>
+    }
+  ]
+}).then(<span class="hljs-function"><span class="pl-k">function</span> (<span class="hljs-params">res</span>) </span>{ <span class="pl-c">// will be called when a button is clicked.</span>
+  <span class="pl-c1">console</span>.log(res.value); <span class="pl-c">// will print &quot;one&quot; from &apos;value&apos;</span>
+});
+</code></pre>
+<h4 id="using-sub_type">Using <code>sub_type</code></h4>
 <p>We can make use of <code>sub_type</code> to ask user for different type of data.</p>
 <p>For example, let&apos;s ask for an email.</p>
 <pre><code class="lang-javascript">botui.action.text({
@@ -115,16 +141,34 @@
 });
 </code></pre>
 <p>What this does under the hood is to set the <code>type</code> attribute on <code>input</code> element. In this case, the attribute would look something like <code>&lt;input type=&quot;email&quot; /&gt;</code>.</p>
-<p>This means you can use any valid <a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types"><code>input type</code></a> here. &#x1F632;</p>
+<p>This means you can use any valid <a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types" target="blank"><code>input type</code></a> here. &#x1F632;</p>
+<h4 id="using-autohide">Using <code>autoHide</code></h4>
+<p>Actions are hidden as soon as they are performed. If you&apos;d like to keep showing actions then you can set &apos;autoHide&apos; to <code>false</code>.</p>
 <pre><code class="lang-javascript">botui.action.button({
+  <span class="hljs-attr">autoHide</span>: <span class="pl-c1">false</span>,
   <span class="hljs-attr">action</span>: [
-    { <span class="pl-c">// show only one button</span>
-      text: <span class="pl-s">&apos;One&apos;</span>,
+    {
+      <span class="hljs-attr">text</span>: <span class="pl-s">&apos;One&apos;</span>,
       <span class="hljs-attr">value</span>: <span class="pl-s">&apos;one&apos;</span>
     }
   ]
 }).then(<span class="hljs-function"><span class="pl-k">function</span> (<span class="hljs-params">res</span>) </span>{ <span class="pl-c">// will be called when a button is clicked.</span>
-  <span class="pl-c1">console</span>.log(res.value); <span class="pl-c">// will print &quot;one&quot; from &apos;value&apos;</span>
+  botui.action.hide(); <span class="pl-c">// hide the button whenever you want.</span>
+});
+</code></pre>
+<h4 id="using-addmessage">Using <code>addMessage</code></h4>
+<p>When an action is performed by user, a message from <code>human</code> side is added automatically with <code>action</code>&apos;s data in it.</p>
+<p>If you&apos;d like to show a message, upon action, yourself or don&apos;t anything at all then you can control this by setting <code>addMessage</code> to <code>false</code>.</p>
+<pre><code class="lang-javascript">botui.action.text({
+  <span class="hljs-attr">addMessage</span>: <span class="pl-c1">false</span>,
+  <span class="hljs-attr">action</span>: {
+    <span class="hljs-attr">placeholder</span>: <span class="pl-s">&apos;Your name&apos;</span>
+  }
+}).then(<span class="hljs-function"><span class="pl-k">function</span> (<span class="hljs-params">res</span>) </span>{ <span class="pl-c">// will be called when a button is clicked.</span>
+  botui.message.add({
+    <span class="hljs-attr">human</span>: <span class="pl-c1">true</span>, <span class="pl-c">// show it as right aligned to UI</span>
+    content: <span class="pl-s">&apos;My name is &apos;</span> + res.value
+  });
 });
 </code></pre>
 <h3 id="botui-markup">BotUI Markup</h3>
