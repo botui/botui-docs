@@ -28,6 +28,8 @@
                   <ul class="heading-list -depth-2">
                     <li class="heading-item -depth-3"><a class="hlink link-using-cdn" href="#using-cdn">Using CDN</a>
                     </li>
+                    <li class="heading-item -depth-3"><a class="hlink link-npm-install" href="#npm-install">NPM Install</a>
+                    </li>
                     <li class="heading-item -depth-3"><a class="hlink link-local-download" href="#local-download">Local Download</a>
                     </li>
                     <li class="heading-item -depth-3"><a class="hlink link-bot-ui-tag" href="#bot-ui-tag">bot-ui Tag</a>
@@ -60,18 +62,27 @@
         <div class="markdown-body"><h2 id="installation">Installation</h2>
 <h3 id="using-cdn">Using CDN</h3>
 <p>A BotUI page requires following files. You can use these links directly in your page.</p>
-<pre><code class="lang-javascript"><span class="pl-c">// required for basic layout</span>
-https:<span class="pl-c">//unpkg.com/botui/build/botui.min.css</span>
+<pre><code>// required for basic layout
+https://unpkg.com/botui/build/botui.min.css
 
-<span class="pl-c">// default theme - you can create your own theme</span>
-https:<span class="pl-c">//unpkg.com/botui/botui/build/botui-theme-default.css</span>
+// default theme - you can create your own theme
+https://unpkg.com/botui/botui/build/botui-theme-default.css
 
-<span class="pl-c">// Vue - BotUI requires Vue to be present in page</span>
-https:<span class="pl-c">//cdn.jsdelivr.net/vue/latest/vue.min.js</span>
+// Vue - BotUI requires Vue to be present in page
+https://cdn.jsdelivr.net/vue/latest/vue.min.js
 
-<span class="pl-c">// BotUI - main file</span>
-https:<span class="pl-c">//unpkg.com/botui/botui/build/botui.min.js</span>
+// BotUI - main file
+https://unpkg.com/botui/botui/build/botui.min.js
 
+</code></pre>
+<h3 id="npm-install">NPM Install</h3>
+<pre><code class="lang-bash">npm install botui --save
+</code></pre>
+<p>And include the files in <code>build</code> folder according to your setup.</p>
+<p>Files you would need are:</p>
+<pre><code>node_modules/botui/build/botui.min.css
+node_modules/botui/build/botui-theme-default.css
+node_modules/botui/build/botui.js
 </code></pre>
 <h3 id="local-download">Local Download</h3>
 <p>You can download the latest files from <a href="https://github.com/moinism/botui/">Github repo</a> and link them to your project.</p>

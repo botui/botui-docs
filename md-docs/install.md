@@ -6,7 +6,7 @@
 
 A BotUI page requires following files. You can use these links directly in your page.
 
-```javascript
+```
 // required for basic layout
 https://unpkg.com/botui/build/botui.min.css
 
@@ -21,6 +21,22 @@ https://unpkg.com/botui/botui/build/botui.min.js
 
 ```
 
+
+### NPM Install
+
+```bash
+npm install botui --save
+```
+
+And include the files in `build` folder according to your setup.
+
+Files you would need are:
+
+```
+node_modules/botui/build/botui.min.css
+node_modules/botui/build/botui-theme-default.css
+node_modules/botui/build/botui.js
+```
 
 
 ### Local Download

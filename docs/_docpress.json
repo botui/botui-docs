@@ -31,6 +31,11 @@
                 "id": "using-cdn"
               },
               {
+                "title": "NPM Install",
+                "depth": 3,
+                "id": "npm-install"
+              },
+              {
                 "title": "Local Download",
                 "depth": 3,
                 "id": "local-download"
@@ -242,6 +247,11 @@
               "title": "Using CDN",
               "depth": 3,
               "id": "using-cdn"
+            },
+            {
+              "title": "NPM Install",
+              "depth": 3,
+              "id": "npm-install"
             },
             {
               "title": "Local Download",
