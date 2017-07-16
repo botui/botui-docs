@@ -109,6 +109,27 @@
 });
 </code></pre>
 <p>What this would do is simply create an <code>iframe</code> element and set <code>content</code> as its <code>src</code> url. So anything that can be shown in an <code>iframe</code> can be embedded in a <code>BotUI</code> message.</p>
+<p>You can also show a &apos;loading&apos; state which is represented by 3 animated dots in UI.
+Here&apos;s how to show a loading message:</p>
+<pre><code class="lang-javascript">botui.message.add({
+  <span class="hljs-attr">loading</span>: <span class="pl-c1">true</span>
+}).then(<span class="hljs-function"><span class="pl-k">function</span> (<span class="hljs-params">index</span>) </span>{
+  <span class="pl-c">// do some stuff like ajax, etc.</span>
+
+  botui.message.update(index, {
+    <span class="hljs-attr">loading</span>: <span class="pl-c1">false</span>,
+    <span class="hljs-attr">content</span>: <span class="pl-s">&apos;Hello, this is a message.&apos;</span>
+  });
+});
+</code></pre>
+<p><code>loading</code> can be combined with <code>delay</code> to show loading for a specific period and then show the original message:</p>
+<pre><code class="lang-javascript">botui.message.add({
+  <span class="hljs-attr">delay</span>: <span class="hljs-number">3000</span>,
+  <span class="hljs-attr">loading</span>: <span class="pl-c1">true</span>,
+  <span class="hljs-attr">content</span>: <span class="pl-s">&apos;Hello, this is delayed message shown after a loading message.&apos;</span>
+});
+</code></pre>
+<p>A loading message will be shown for 3 seconds and then its <code>content</code>.</p>
 <h3 id="actions">Actions</h3>
 <p>Show a field to get a <strong>text</strong> input:</p>
 <pre><code class="lang-javascript">botui.action.text({

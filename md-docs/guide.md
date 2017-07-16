@@ -68,6 +68,34 @@ botui.message.add({
 
 What this would do is simply create an `iframe` element and set `content` as its `src` url. So anything that can be shown in an `iframe` can be embedded in a `BotUI` message.
 
+You can also show a 'loading' state which is represented by 3 animated dots in UI.
+Here's how to show a loading message:
+
+```javascript
+botui.message.add({
+  loading: true
+}).then(function (index) {
+  // do some stuff like ajax, etc.
+
+  botui.message.update(index, {
+    loading: false,
+    content: 'Hello, this is a message.'
+  });
+});
+```
+
+`loading` can be combined with `delay` to show loading for a specific period and then show the original message:
+
+```javascript
+botui.message.add({
+  delay: 3000,
+  loading: true,
+  content: 'Hello, this is delayed message shown after a loading message.'
+});
+```
+
+A loading message will be shown for 3 seconds and then its `content`.
+
 ### Actions
 
 Show a field to get a **text** input:

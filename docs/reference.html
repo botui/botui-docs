@@ -159,7 +159,7 @@
 <li><a href="#message-object"><code>message</code></a></li>
 </ol>
 <blockquote>
-<p>Only <code>content</code> of message can updated. <code>type</code> of a message cannot be changed.</p>
+<p>Only <code>content</code> and <code>loading</code> property of message can updated. <code>type</code> of a message cannot be changed.</p>
 </blockquote>
 <p>Returns <a href="#promise"><code>Promise</code></a> with updated <code>content</code> of <a href="#message-object"><code>message</code></a>.</p>
 </li>
@@ -211,7 +211,9 @@
 <pre><code class="lang-javascript"><span class="pl-c">// with default values.</span>
 
 {
-  <span class="hljs-attr">delay</span>: <span class="hljs-number">0</span>, <span class="pl-c">// wait before showing the message. in milliseconds.</span>
+  <span class="hljs-attr">loading</span>: <span class="pl-c1">false</span>, <span class="pl-c">// set to true if you want to show a loading state &apos;3 animated dots&apos;. available in version &gt;= 0.3.1</span>
+
+  delay: <span class="hljs-number">0</span>, <span class="pl-c">// wait before showing the message. in milliseconds.</span>
 
   type: <span class="pl-s">&apos;text&apos;</span>, <span class="pl-c">// either &apos;text&apos; or &apos;embed&apos;</span>
 

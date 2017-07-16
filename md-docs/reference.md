@@ -89,7 +89,7 @@ It has seven methods.
   1. `index`
   2. [`message`](#message-object)
 
-  > Only `content` of message can updated. `type` of a message cannot be changed.
+  > Only `content` and `loading` property of message can updated. `type` of a message cannot be changed.
 
   Returns [`Promise`](#promise) with updated `content` of [`message`](#message-object).
 
@@ -144,6 +144,8 @@ Can be passed to ..
 // with default values.
 
 {
+  loading: false, // set to true if you want to show a loading state '3 animated dots'. available in version >= 0.3.1
+
   delay: 0, // wait before showing the message. in milliseconds.
 
   type: 'text', // either 'text' or 'embed'
