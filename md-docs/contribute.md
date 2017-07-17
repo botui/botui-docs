@@ -19,7 +19,7 @@ Once you are done contributing, `commit`, `push` and then create a pull request.
 
 ## Contribute to BotUI
 
-1. Fork the [BotUI repo]https://github.com/moinism/botui)
+1. Fork the [BotUI repo](https://github.com/moinism/botui)
 2. Clone the forked repo `git clone ...` and `cd` to it
 3. Do an `npm install`
 4. Run `gulp watch`
