@@ -18,7 +18,7 @@ Developer has total control over which message to show and what to show in it.
 Here is how to show a message from bot:
 
 ```javascript
-myBot.message.add({
+botui.message.add({
   content: 'Hello from bot.'
 });
 ```
@@ -26,7 +26,7 @@ myBot.message.add({
 And here's how to show it as a user sent message:
 
 ```javascript
-myBot.message.add({
+botui.message.add({
   human: true,
   content: 'Hello from human.'
 });
@@ -43,11 +43,11 @@ Developer can show or hide the action. But only one type of action can be shown 
 Here's how to ask for a user's name:
 
 ```javascript
-myBot.message.add({ // show a message
+botui.message.add({ // show a message
   human: true,
   content: 'Whats your name?'
 }).then(function () { // wait till its shown
-  myBot.action.text({ // show 'text' action
+  botui.action.text({ // show 'text' action
     action: {
       placeholder: 'Your name'
     }
@@ -65,11 +65,11 @@ You are mostly likely to show a message after the previous one is shown or after
 Like in this example:
 
 ```javascript
-myBot.message.add({ // show a message
+botui.message.add({ // show a message
   human: true,
   content: 'Whats your name?'
 }).then(function () { // wait till its shown
-  myBot.action.text({ // show 'text' action
+  botui.action.text({ // show 'text' action
     action: {
       placeholder: 'Your name'
     }
@@ -83,17 +83,17 @@ You keep chaining messages and actions together using `then`.
 
 
 ```javascript
-myBot.message.add({ // show a message
+botui.message.add({ // show a message
   human: true,
   content: 'Whats your name?'
 }).then(function () { // wait till its shown
-  return myBot.action.text({ // show 'text' action
+  return botui.action.text({ // show 'text' action
     action: {
       placeholder: 'Your name'
     }
   });
 }).then(function (res) { // get the result
-  myBot.message.add({
+  botui.message.add({
     content: 'Your name is ' + res.value
   });
 });
