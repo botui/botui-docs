@@ -63,12 +63,12 @@
 <p>The message from bot shows up aligned to the left. The message from human shows up aligned to the right of UI and with a slighted different background that bot message.</p>
 <p>Developer has total control over which message to show and what to show in it.</p>
 <p>Here is how to show a message from bot:</p>
-<pre><code class="lang-javascript">myBot.message.add({
+<pre><code class="lang-javascript">botui.message.add({
   <span class="hljs-attr">content</span>: <span class="pl-s">&apos;Hello from bot.&apos;</span>
 });
 </code></pre>
 <p>And here&apos;s how to show it as a user sent message:</p>
-<pre><code class="lang-javascript">myBot.message.add({
+<pre><code class="lang-javascript">botui.message.add({
   <span class="hljs-attr">human</span>: <span class="pl-c1">true</span>,
   <span class="hljs-attr">content</span>: <span class="pl-s">&apos;Hello from human.&apos;</span>
 });
@@ -78,11 +78,11 @@
 <p>Action could be some text input required from user. Or a couple of buttons.</p>
 <p>Developer can show or hide the action. But only one type of action can be shown at once.</p>
 <p>Here&apos;s how to ask for a user&apos;s name:</p>
-<pre><code class="lang-javascript">myBot.message.add({ <span class="pl-c">// show a message</span>
+<pre><code class="lang-javascript">botui.message.add({ <span class="pl-c">// show a message</span>
   human: <span class="pl-c1">true</span>,
   <span class="hljs-attr">content</span>: <span class="pl-s">&apos;Whats your name?&apos;</span>
 }).then(<span class="hljs-function"><span class="pl-k">function</span> (<span class="hljs-params"></span>) </span>{ <span class="pl-c">// wait till its shown</span>
-  myBot.action.text({ <span class="pl-c">// show &apos;text&apos; action</span>
+  botui.action.text({ <span class="pl-c">// show &apos;text&apos; action</span>
     action: {
       <span class="hljs-attr">placeholder</span>: <span class="pl-s">&apos;Your name&apos;</span>
     }
@@ -94,11 +94,11 @@ You can read more about it in the guide.</p>
 <h2 id="use-of-then">Use of then</h2>
 <p>You are mostly likely to show a message after the previous one is shown or after an action has been performed so we need some kind of callback here. That&apos;s where <code>then</code> comes in. You can define your callback function inside a <code>then</code> and chain it to previous message or action.</p>
 <p>Like in this example:</p>
-<pre><code class="lang-javascript">myBot.message.add({ <span class="pl-c">// show a message</span>
+<pre><code class="lang-javascript">botui.message.add({ <span class="pl-c">// show a message</span>
   human: <span class="pl-c1">true</span>,
   <span class="hljs-attr">content</span>: <span class="pl-s">&apos;Whats your name?&apos;</span>
 }).then(<span class="hljs-function"><span class="pl-k">function</span> (<span class="hljs-params"></span>) </span>{ <span class="pl-c">// wait till its shown</span>
-  myBot.action.text({ <span class="pl-c">// show &apos;text&apos; action</span>
+  botui.action.text({ <span class="pl-c">// show &apos;text&apos; action</span>
     action: {
       <span class="hljs-attr">placeholder</span>: <span class="pl-s">&apos;Your name&apos;</span>
     }
@@ -107,17 +107,17 @@ You can read more about it in the guide.</p>
 </code></pre>
 <p>Here <code>then</code> will only be called once the previous message has been shown.</p>
 <p>You keep chaining messages and actions together using <code>then</code>.</p>
-<pre><code class="lang-javascript">myBot.message.add({ <span class="pl-c">// show a message</span>
+<pre><code class="lang-javascript">botui.message.add({ <span class="pl-c">// show a message</span>
   human: <span class="pl-c1">true</span>,
   <span class="hljs-attr">content</span>: <span class="pl-s">&apos;Whats your name?&apos;</span>
 }).then(<span class="hljs-function"><span class="pl-k">function</span> (<span class="hljs-params"></span>) </span>{ <span class="pl-c">// wait till its shown</span>
-  <span class="pl-k">return</span> myBot.action.text({ <span class="pl-c">// show &apos;text&apos; action</span>
+  <span class="pl-k">return</span> botui.action.text({ <span class="pl-c">// show &apos;text&apos; action</span>
     action: {
       <span class="hljs-attr">placeholder</span>: <span class="pl-s">&apos;Your name&apos;</span>
     }
   });
 }).then(<span class="hljs-function"><span class="pl-k">function</span> (<span class="hljs-params">res</span>) </span>{ <span class="pl-c">// get the result</span>
-  myBot.message.add({
+  botui.message.add({
     <span class="hljs-attr">content</span>: <span class="pl-s">&apos;Your name is &apos;</span> + res.value
   });
 });

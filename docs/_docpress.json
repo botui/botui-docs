@@ -36,6 +36,11 @@
                 "id": "npm-install"
               },
               {
+                "title": "Using Webpack",
+                "depth": 3,
+                "id": "using-webpack"
+              },
+              {
                 "title": "Local Download",
                 "depth": 3,
                 "id": "local-download"
@@ -252,6 +257,11 @@
               "title": "NPM Install",
               "depth": 3,
               "id": "npm-install"
+            },
+            {
+              "title": "Using Webpack",
+              "depth": 3,
+              "id": "using-webpack"
             },
             {
               "title": "Local Download",

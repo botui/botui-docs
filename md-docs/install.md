@@ -38,6 +38,35 @@ node_modules/botui/build/botui-theme-default.css
 node_modules/botui/build/botui.js
 ```
 
+### Using Webpack
+
+In webpack or rollup, you'll also need to `import` Vue.
+
+```javascript
+import Vue from 'vue'
+import BotUI from 'botui'
+
+const botui = BotUI('my-botui-app', {
+  vue: Vue // pass the dependency.
+})
+```
+
+> Make sure to use the minified version of Vue. Full version produces errors for some reasons.
+
+You can add an `alias` in your webpack `config` like this:
+
+```javascript
+module.exports = {
+  ...
+  resolve: {
+    alias: {
+      'vue': 'vue/dist/vue.min.js',
+    }
+  },
+  ...
+}
+```
+
 
 ### Local Download
 

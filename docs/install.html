@@ -30,6 +30,8 @@
                     </li>
                     <li class="heading-item -depth-3"><a class="hlink link-npm-install" href="#npm-install">NPM Install</a>
                     </li>
+                    <li class="heading-item -depth-3"><a class="hlink link-using-webpack" href="#using-webpack">Using Webpack</a>
+                    </li>
                     <li class="heading-item -depth-3"><a class="hlink link-local-download" href="#local-download">Local Download</a>
                     </li>
                     <li class="heading-item -depth-3"><a class="hlink link-bot-ui-tag" href="#bot-ui-tag">bot-ui Tag</a>
@@ -83,6 +85,29 @@ https://unpkg.com/botui/build/botui.min.js
 <pre><code>node_modules/botui/build/botui.min.css
 node_modules/botui/build/botui-theme-default.css
 node_modules/botui/build/botui.js
+</code></pre>
+<h3 id="using-webpack">Using Webpack</h3>
+<p>In webpack or rollup, you&apos;ll also need to <code>import</code> Vue.</p>
+<pre><code class="lang-javascript"><span class="pl-k">import</span> Vue <span class="pl-k">from</span> <span class="pl-s">&apos;vue&apos;</span>
+<span class="pl-k">import</span> BotUI <span class="pl-k">from</span> <span class="pl-s">&apos;botui&apos;</span>
+
+<span class="pl-k">const</span> botui = BotUI(<span class="pl-s">&apos;my-botui-app&apos;</span>, {
+  <span class="hljs-attr">vue</span>: Vue <span class="pl-c">// pass the dependency.</span>
+})
+</code></pre>
+<blockquote>
+<p>Make sure to use the minified version of Vue. Full version produces errors for some reasons.</p>
+</blockquote>
+<p>You can add an <code>alias</code> in your webpack <code>config</code> like this:</p>
+<pre><code class="lang-javascript"><span class="pl-c1">module</span>.exports = {
+  ...
+  resolve: {
+    <span class="hljs-attr">alias</span>: {
+      <span class="pl-s">&apos;vue&apos;</span>: <span class="pl-s">&apos;vue/dist/vue.min.js&apos;</span>,
+    }
+  },
+  ...
+}
 </code></pre>
 <h3 id="local-download">Local Download</h3>
 <p>You can download the latest files from <a href="https://github.com/moinism/botui/">Github repo</a> and link them to your project.</p>
