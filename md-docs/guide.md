@@ -190,7 +190,7 @@ BotUI supports a subset of markdown language in `content` on `message` object.
 Currently supported set is:
 
 - URLs - Use `[name](url)` syntax to show links.
-- Images - Use `![aleternate text](src)` to show Images.
+- Images - Use `![alternate text](src)` to show Images.
 - Icons (not a feature of markdown) - Use `!(icon name)` to show icons.
 
 **URL** Example:
