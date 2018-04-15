@@ -125,6 +125,59 @@ botui.action.button({
 });
 ```
 
+Show a dropdown.
+
+```javascript
+botui.action.select({
+  action: {
+      placeholder : "Select Language", 
+      value: 'TR', // Selected value or selected object. Example: {value: "TR", text : "Türkçe" }
+      searchselect : true // Default: true, false for standart dropdown
+      label : 'text', // dropdown label variable
+      options : [
+                      {value: "EN", text : "English" },
+                      {value: "ES", text : "Español" },
+                      {value: "TR", text : "Türkçe" },
+                      {value: "DE", text : "Deutsch" },
+                      {value: "FR", text : "Français" },
+                      {value: "IT", text : "Italiano" },
+                ],
+      button: {
+        icon: 'check',
+        label: 'OK'
+      }
+    }
+}).then(function (res) { // will be called when a button is clicked.
+  console.log(res.value); // will print "one" from 'value'
+});
+```
+
+Show a dropdown multiple select.
+
+```javascript
+botui.action.select({
+  action: {
+      placeholder : "Select Language", 
+      value: 'TR,EN', // Selected value or Selected Array object. Example: [{value: "TR", text : "Türkçe" },{value: "EN", text : "English" }]
+      multipleselect : true, // Default: false
+      options : [
+                      {value: "EN", text : "English" },
+                      {value: "ES", text : "Español" },
+                      {value: "TR", text : "Türkçe" },
+                      {value: "DE", text : "Deutsch" },
+                      {value: "FR", text : "Français" },
+                      {value: "IT", text : "Italiano" },
+                ],
+      button: {
+        icon: 'check',
+        label: 'OK'
+      }
+    }
+}).then(function (res) { // will be called when a button is clicked.
+  console.log(res.value); // will print "one" from 'value'
+});
+```
+
 #### Using `sub_type`
 
 We can make use of `sub_type` to ask user for different type of data.
