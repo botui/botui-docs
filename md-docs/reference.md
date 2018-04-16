@@ -17,6 +17,7 @@
       - [`show`](#botui.action.show)
       - [`hide`](#botui.action.hide)
       - [`text`](#botui.action.text)
+      - [`select`](#botui.action.select)
       - [`button`](#botui.action.button)
 - [`message`](#message-object) object
 - [`action`](#action-object) object
@@ -125,6 +126,12 @@ It has four methods.
     Returns [`Promise`](#promise)
   - #### `botui.action.text`
     Shows the action section and sets the action `type` to `text`. Its a shorthand to `show`.
+
+    Accepts an `object` of [`action`](#action-object) type.
+
+    Returns [`Promise`](#promise) with [`result`](#result-object) as argument.
+  - #### `botui.action.select`
+    Shows the action section and sets the action `type` to `select`. Its a shorthand to `show`.
 
     Accepts an `object` of [`action`](#action-object) type.
 

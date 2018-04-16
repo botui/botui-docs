@@ -152,6 +152,53 @@ Here&apos;s how to show a loading message:</p>
   <span class="pl-c1">console</span>.log(res.value); <span class="pl-c">// will print &quot;one&quot; from &apos;value&apos;</span>
 });
 </code></pre>
+<p>Show a dropdown.</p>
+<pre><code class="lang-javascript">botui.action.select({
+  <span class="hljs-attr">action</span>: {
+      <span class="hljs-attr">placeholder</span> : <span class="pl-s">&quot;Select Language&quot;</span>, 
+      <span class="hljs-attr">value</span>: <span class="pl-s">&apos;TR&apos;</span>, <span class="pl-c">// Selected value or selected object. Example: {value: &quot;TR&quot;, text : &quot;T&#xFC;rk&#xE7;e&quot; }</span>
+      searchselect : <span class="pl-c1">true</span> <span class="pl-c">// Default: true, false for standart dropdown</span>
+      label : <span class="pl-s">&apos;text&apos;</span>, <span class="pl-c">// dropdown label variable</span>
+      options : [
+                      {<span class="hljs-attr">value</span>: <span class="pl-s">&quot;EN&quot;</span>, <span class="hljs-attr">text</span> : <span class="pl-s">&quot;English&quot;</span> },
+                      {<span class="hljs-attr">value</span>: <span class="pl-s">&quot;ES&quot;</span>, <span class="hljs-attr">text</span> : <span class="pl-s">&quot;Espa&#xF1;ol&quot;</span> },
+                      {<span class="hljs-attr">value</span>: <span class="pl-s">&quot;TR&quot;</span>, <span class="hljs-attr">text</span> : <span class="pl-s">&quot;T&#xFC;rk&#xE7;e&quot;</span> },
+                      {<span class="hljs-attr">value</span>: <span class="pl-s">&quot;DE&quot;</span>, <span class="hljs-attr">text</span> : <span class="pl-s">&quot;Deutsch&quot;</span> },
+                      {<span class="hljs-attr">value</span>: <span class="pl-s">&quot;FR&quot;</span>, <span class="hljs-attr">text</span> : <span class="pl-s">&quot;Fran&#xE7;ais&quot;</span> },
+                      {<span class="hljs-attr">value</span>: <span class="pl-s">&quot;IT&quot;</span>, <span class="hljs-attr">text</span> : <span class="pl-s">&quot;Italiano&quot;</span> },
+                ],
+      <span class="hljs-attr">button</span>: {
+        <span class="hljs-attr">icon</span>: <span class="pl-s">&apos;check&apos;</span>,
+        <span class="hljs-attr">label</span>: <span class="pl-s">&apos;OK&apos;</span>
+      }
+    }
+}).then(<span class="hljs-function"><span class="pl-k">function</span> (<span class="hljs-params">res</span>) </span>{ <span class="pl-c">// will be called when a button is clicked.</span>
+  <span class="pl-c1">console</span>.log(res.value); <span class="pl-c">// will print &quot;one&quot; from &apos;value&apos;</span>
+});
+</code></pre>
+<p>Show a dropdown multiple select.</p>
+<pre><code class="lang-javascript">botui.action.select({
+  <span class="hljs-attr">action</span>: {
+      <span class="hljs-attr">placeholder</span> : <span class="pl-s">&quot;Select Language&quot;</span>, 
+      <span class="hljs-attr">value</span>: <span class="pl-s">&apos;TR,EN&apos;</span>, <span class="pl-c">// Selected value or Selected Array object. Example: [{value: &quot;TR&quot;, text : &quot;T&#xFC;rk&#xE7;e&quot; },{value: &quot;EN&quot;, text : &quot;English&quot; }]</span>
+      multipleselect : <span class="pl-c1">true</span>, <span class="pl-c">// Default: false</span>
+      options : [
+                      {<span class="hljs-attr">value</span>: <span class="pl-s">&quot;EN&quot;</span>, <span class="hljs-attr">text</span> : <span class="pl-s">&quot;English&quot;</span> },
+                      {<span class="hljs-attr">value</span>: <span class="pl-s">&quot;ES&quot;</span>, <span class="hljs-attr">text</span> : <span class="pl-s">&quot;Espa&#xF1;ol&quot;</span> },
+                      {<span class="hljs-attr">value</span>: <span class="pl-s">&quot;TR&quot;</span>, <span class="hljs-attr">text</span> : <span class="pl-s">&quot;T&#xFC;rk&#xE7;e&quot;</span> },
+                      {<span class="hljs-attr">value</span>: <span class="pl-s">&quot;DE&quot;</span>, <span class="hljs-attr">text</span> : <span class="pl-s">&quot;Deutsch&quot;</span> },
+                      {<span class="hljs-attr">value</span>: <span class="pl-s">&quot;FR&quot;</span>, <span class="hljs-attr">text</span> : <span class="pl-s">&quot;Fran&#xE7;ais&quot;</span> },
+                      {<span class="hljs-attr">value</span>: <span class="pl-s">&quot;IT&quot;</span>, <span class="hljs-attr">text</span> : <span class="pl-s">&quot;Italiano&quot;</span> },
+                ],
+      <span class="hljs-attr">button</span>: {
+        <span class="hljs-attr">icon</span>: <span class="pl-s">&apos;check&apos;</span>,
+        <span class="hljs-attr">label</span>: <span class="pl-s">&apos;OK&apos;</span>
+      }
+    }
+}).then(<span class="hljs-function"><span class="pl-k">function</span> (<span class="hljs-params">res</span>) </span>{ <span class="pl-c">// will be called when a button is clicked.</span>
+  <span class="pl-c1">console</span>.log(res.value); <span class="pl-c">// will print &quot;one&quot; from &apos;value&apos;</span>
+});
+</code></pre>
 <h4 id="using-sub_type">Using <code>sub_type</code></h4>
 <p>We can make use of <code>sub_type</code> to ask user for different type of data.</p>
 <p>For example, let&apos;s ask for an email.</p>
