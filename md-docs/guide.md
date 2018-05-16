@@ -57,6 +57,15 @@ botui.message.add({
 });
 ```
 
+Here's how to html in a message:
+
+```javascript
+botui.message.add({
+  type: 'html', // this is 'text' by default
+  content: 'Hello, this is a <b>bold message</b>.'
+});
+```
+
 Here's how to embed a YouTube video in a message:
 
 ```javascript
