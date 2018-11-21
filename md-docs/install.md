@@ -67,6 +67,18 @@ module.exports = {
 }
 ```
 
+If you’re unable to add an `alias` (e.g. because you’re using [`create-react-app`](https://github.com/facebook/create-react-app)), modify the `module` key in Vue’s `package.json` file to point to `vue.min.js` instead of `vue.runtime.esm.js`:
+
+```
+"module": "dist/vue.min.js",
+```
+
+You can also do this via CLI:
+```
+sed -i '' 's_vue.runtime.esm.js_vue.min.js_g' ~/__PATH_TO_YOUR_APP__/node_modules/vue/package.json
+```
+
+Note that you’ll need to do this manual step each time you add or upgrade Vue as an npm package to your project.
 
 ### Local Download
 

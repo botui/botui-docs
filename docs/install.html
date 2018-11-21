@@ -109,6 +109,13 @@ node_modules/botui/build/botui.js
   ...
 }
 </code></pre>
+<p>If you&#x2019;re unable to add an <code>alias</code> (e.g. because you&#x2019;re using <a href="https://github.com/facebook/create-react-app"><code>create-react-app</code></a>), modify the <code>module</code> key in Vue&#x2019;s <code>package.json</code> file to point to <code>vue.min.js</code> instead of <code>vue.runtime.esm.js</code>:</p>
+<pre><code>&quot;module&quot;: &quot;dist/vue.min.js&quot;,
+</code></pre>
+<p>You can also do this via CLI:</p>
+<pre><code>sed -i &apos;&apos; &apos;s_vue.runtime.esm.js_vue.min.js_g&apos; ~/__PATH_TO_YOUR_APP__/node_modules/vue/package.json
+</code></pre>
+<p>Note that you&#x2019;ll need to do this manual step each time you add or upgrade Vue as an npm package to your project.</p>
 <h3 id="local-download">Local Download</h3>
 <p>You can download the latest files from <a href="https://github.com/moinism/botui/">Github repo</a> and link them to your project.</p>
 <p>All the required files are in <code>build</code> folder. But you still have to add <a href="https://cdn.jsdelivr.net/vue/latest/vue.min.js">Vue</a>, either via CDN or local script.</p>
