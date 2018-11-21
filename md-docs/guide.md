@@ -141,7 +141,7 @@ botui.action.select({
   action: {
       placeholder : "Select Language", 
       value: 'TR', // Selected value or selected object. Example: {value: "TR", text : "Türkçe" }
-      searchselect : true // Default: true, false for standart dropdown
+      searchselect : true, // Default: true, false for standart dropdown
       label : 'text', // dropdown label variable
       options : [
                       {value: "EN", text : "English" },
