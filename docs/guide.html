@@ -102,6 +102,12 @@
   <span class="hljs-attr">content</span>: <span class="pl-s">&apos;Hello, this is a message.&apos;</span>
 });
 </code></pre>
+<p>Here&apos;s how to html in a message:</p>
+<pre><code class="lang-javascript">botui.message.add({
+  <span class="hljs-attr">type</span>: <span class="pl-s">&apos;html&apos;</span>, <span class="pl-c">// this is &apos;text&apos; by default</span>
+  content: <span class="pl-s">&apos;Hello, this is a &lt;b&gt;bold message&lt;/b&gt;.&apos;</span>
+});
+</code></pre>
 <p>Here&apos;s how to embed a YouTube video in a message:</p>
 <pre><code class="lang-javascript">botui.message.add({
   <span class="hljs-attr">type</span>: <span class="pl-s">&apos;embed&apos;</span>, <span class="pl-c">// this is &apos;text&apos; by default</span>
