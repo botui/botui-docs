@@ -141,7 +141,7 @@ botui.action.select({
   action: {
       placeholder : "Select Language", 
       value: 'TR', // Selected value or selected object. Example: {value: "TR", text : "Türkçe" }
-      searchselect : true, // Default: true, false for standart dropdown
+      searchselect : true, // Default: true, false for standard dropdown
       label : 'text', // dropdown label variable
       options : [
                       {value: "EN", text : "English" },
@@ -303,7 +303,7 @@ Preview:
 
 **Icon** Example:
 
-If you are familiar with FontAwesome then you that in order to show a checkmark icon, we would use something like `<i class="fa fa-check"><i>`
+If you are familiar with FontAwesome then you know that in order to show a checkmark icon, we would use something like `<i class="fa fa-check"><i>`
 
 
 Similarly, to show that icon in BotUI we'd do something like:
